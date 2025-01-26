@@ -1,0 +1,75 @@
+/* dsdsdsdsd */
+body,
+html {
+    background: linear-gradient(gray, black);
+    height: 100vh;
+    overflow-y: hidden;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    align-items: center;
+
+}
+
+.lightSquares {
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 100px 100px;
+    width: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+    outline: 10px black solid;
+
+}
+
+.mainContainer {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.RedS,
+.BlueS,
+.GreenS,
+.YellowS {
+    border: 5px black solid;
+    transform: scale(1.1);
+    background: transparent;
+    transition: all 0.5s ease-in-out;
+}
+
+.RedS:active,
+.RedS.active {
+    background-color: rgb(62, 3, 3) !important;
+    cursor: pointer;
+}
+
+.BlueS:active,
+.BlueS.active {
+    background-color: rgb(12, 59, 104) !important;
+    cursor: pointer;
+}
+
+.GreenS:active,
+.GreenS.active {
+    background-color: rgb(5, 97, 27) !important;
+    cursor: pointer;
+}
+
+.YellowS:active,
+.YellowS.active {
+    background-color: rgb(120, 88, 7) !important;
+    cursor: pointer;
+}
+
+
+
+.InnerCirlces {}
