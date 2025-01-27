@@ -48,7 +48,7 @@ main {
 
 .RedS:active,
 .RedS.active {
-    background-color: rgb(62, 3, 3) !important;
+    background-color: rgb(94, 5, 5) !important;
     cursor: pointer;
 }
 
@@ -70,6 +70,22 @@ main {
     cursor: pointer;
 }
 
+.Start {
+    border: 1px black solid;
+    border-radius: 5px;
+    width: 90px;
+    height: 50px;
+    background-color: black;
+    color: rgb(231, 229, 233);
+    transition: all 0.3s ease-in-out;
+}
 
+.Start:hover {
+    background-color: rgb(117, 113, 120);
+    cursor: pointer;
+    color: black;
+
+
+}
 
 .InnerCirlces {}
