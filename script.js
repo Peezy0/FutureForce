@@ -31,6 +31,7 @@ const startGame = () => {
 const playHint = async () => {
     for (let i = 0; i < level; i++) {
         await highlightButton(pattern[i]);
+
     }
 
 }
