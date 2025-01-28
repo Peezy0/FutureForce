@@ -1,7 +1,7 @@
 /* dsdsdsdsd */
 body,
 html {
-    background: linear-gradient(gray, black);
+    background: linear-gradient(rgb(65, 65, 65), black);
     height: 100vh;
     overflow-y: hidden;
 
@@ -71,7 +71,7 @@ main {
 }
 
 .Start {
-    border: 1px black solid;
+    border: 0px black solid;
     border-radius: 5px;
     width: 90px;
     height: 50px;
@@ -81,7 +81,7 @@ main {
 }
 
 .Start:hover {
-    background-color: rgb(117, 113, 120);
+    background-color: rgb(153, 152, 154);
     cursor: pointer;
     color: black;
 

@@ -1,7 +1,7 @@
 //Add your global variables here
 let play = false;
 let pattern = [];
-let level = 4;
+let level = 7;
 
 
 
@@ -22,6 +22,7 @@ const randomPattern = () => {
 }
 // Function to start the game, create the pattern, then play the sequence
 const startGame = () => {
+    pattern = [];
     play = true;
     randomPattern();
     playHint();
@@ -39,17 +40,14 @@ const playHint = async () => {
 const highlightButton = async (button) => {
     const docButton = document.getElementById('button-' + button);
     docButton.classList.add('active');
-    setTimeout(() => {
-        docButton.classList.remove('active');
-    }, 1000)
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            docButton.classList.remove('active');
+            resolve();
+        }, 1000)
+    })
 
 }
-
-
-
-
-
-
 
 // Sound Synthesis Functions for Steps 6-8
 // You do not need to edit the below code
