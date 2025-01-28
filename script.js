@@ -21,15 +21,21 @@ const randomPattern = () => {
     }
 }
 // Function to start the game, create the pattern, then play the sequence
-const startGame = () => {
-    pattern = [];
-    play = true;
-    randomPattern();
-    playHint();
+const toggleGame = () => {
+    play = !play;
+    if (play == true) {
+        document.getElementById("start").innerHTML = "Stop";
+        pattern = [];
+        randomPattern();
+        playHint();
+    }
+    else {
+        document.getElementById("start").innerHTML = "Start";
+    }
 }
-
 //Function to show highlights to the buttons, that follows the pattern array nums (0,1,2,3)
 const playHint = async () => {
+
     for (let i = 0; i < level; i++) {
         await highlightButton(pattern[i]);
 
@@ -46,7 +52,11 @@ const highlightButton = async (button) => {
             resolve();
         }, 1000)
     })
-
+    await new Promise((resolve) => {
+        setTimeout(() => {
+            resolve()
+        }, 500)
+    })
 }
 
 // Sound Synthesis Functions for Steps 6-8
