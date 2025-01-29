@@ -2,8 +2,8 @@
 let play = false;
 let pattern = [];
 let level = 7;
-
-
+let gameStarted = false
+let highlightProgress = 0;
 
 
 // Add your functions here
@@ -20,10 +20,10 @@ const randomPattern = () => {
         pattern.push(randomNums(0, 3));
     }
 }
-// Function to start the game, create the pattern, then play the sequence
-const toggleGame = () => {
-    play = !play;
-    if (play == true) {
+//Function to start the game and begin usability of the start and stop button
+const startGame = () => {
+    gameStarted = !gameStarted;
+    if (gameStarted == true) {
         document.getElementById("start").innerHTML = "Stop";
         pattern = [];
         randomPattern();
@@ -33,11 +33,33 @@ const toggleGame = () => {
         document.getElementById("start").innerHTML = "Start";
     }
 }
-//Function to show highlights to the buttons, that follows the pattern array nums (0,1,2,3)
+// Function to toggle the play and pause button when the game has started
+const toggleGame = () => {
+    play = !play;
+    if (play == true) {
+        document.getElementById("pause").innerHTML = "Pause";
+    }
+    else {
+        document.getElementById("pause").innerHTML = "Play";
+    }
+}
+//Function to show highlights to the buttons, that follows the pattern array nums (0,1,2,3), also added a pause function
 const playHint = async () => {
 
-    for (let i = 0; i < level; i++) {
-        await highlightButton(pattern[i]);
+    for (let i = highlightProgress; i < level; i++) {
+        if (play == true) {
+            if (i >= level) {
+                highlightProgress = 0;
+            }
+            else {
+                highlightProgress = i;
+            }
+            await highlightButton(pattern[i]);
+        }
+        else {
+            return;
+        }
+
 
     }
 
